@@ -1,0 +1,8 @@
+CREATE TABLE books (
+    id UUID PRIMARY KEY,
+    title VARCHAR(255) NOT NULL UNIQUE,
+    author VARCHAR(255) NOT NULL,
+    isbn VARCHAR(50) NOT NULL UNIQUE,
+    publication_date DATE NOT NULL,
+    status VARCHAR(20) NOT NULL CHECK (status IN ('AVAILABLE', 'BORROWED'))
+)
