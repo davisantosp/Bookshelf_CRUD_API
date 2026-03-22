@@ -53,6 +53,9 @@ public class BookService {
     }
 
     public void deleteBook(UUID id){
+        if (!bookRepository.existsById(id))
+            throw new ResourceNotFoundException("Livro não encontrado");
+
         bookRepository.deleteById(id);
     }
 }
