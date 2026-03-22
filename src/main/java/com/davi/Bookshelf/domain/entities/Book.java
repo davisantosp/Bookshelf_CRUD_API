@@ -29,12 +29,13 @@ public class Book {
     private String author;
 
     @Column(nullable = false)
-    private String ISBN;
+    private String isbn;
 
     @Column(nullable = false)
     @DateTimeFormat
     private LocalDate publicationDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BookStatus status;
 }
